@@ -1,6 +1,6 @@
 # AI-Powered Predictive Maintenance System ⚙️
 
-An end-to-end Machine Learning solution designed to predict industrial machine failures before they occur. This project utilizes sensor data (temperature, torque, rotational speed) to provide real-time risk assessments and maintenance recommendations through an interactive glass-morphic dashboard.
+An end-to-end Machine Learning solution designed to predict industrial machine failures before they occur. This project utilizes sensor data (temperature, torque, rotational speed) to provide real-time risk assessments and maintenance recommendations through an interactive dashboard.
 
 ## 🚀 Project Overview
 This system is trained on the **AI4I 2020 Predictive Maintenance Dataset**. It uses an optimized **XGBoost** classifier to achieve high recall, ensuring that critical maintenance issues are identified early to reduce unplanned downtime.
