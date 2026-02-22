@@ -1,54 +1,76 @@
-# 🏭 NeuralPulse: Industrial Predictive Maintenance System
+# AI-Powered Predictive Maintenance System ⚙️
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.31-red)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+An end-to-end Machine Learning solution designed to predict industrial machine failures before they occur. This project utilizes sensor data (temperature, torque, rotational speed) to provide real-time risk assessments and maintenance recommendations through an interactive glass-morphic dashboard.
 
-**NeuralPulse** is a cutting-edge **Machine Failure Prediction System** designed to minimize industrial downtime. Built using **Python (Streamlit)** and powered by **Machine Learning**, it predicts potential equipment failures in real-time based on sensor data (Temperature, RPM, Pressure, etc.).
+## 🚀 Project Overview
+This system is trained on the **AI4I 2020 Predictive Maintenance Dataset**. It uses an optimized **XGBoost** classifier to achieve high recall, ensuring that critical maintenance issues are identified early to reduce unplanned downtime.
 
-The UI was conceptually designed using **Google Stitch** to ensure a professional, industrial-grade aesthetic.
-
----
-
-## ✨ Key Features
-
-* **🧠 Advanced ML Integration:** Uses trained Logistic Regression/KNN models to predict failure probability with high accuracy.
-* **🎨 Industrial UI Design:** Custom dark-mode interface with Glassmorphism effects, inspired by **Google Stitch** designs.
-* **🔐 Secure Authentication:** Role-based login system for Operators and Managers (Supports Registration & Login).
-* **📈 Real-Time Analytics:** Interactive line charts for sensor data (Temperature, Vibration, Torque).
-* **⚠️ Smart Alerts:** Automatic flagging of critical failures with color-coded probability indicators (Red for Danger, Green for Safe).
-* **📝 Audit History:** Exportable logs (CSV) of all machine predictions for maintenance review.
+### Key Features
+* **Real-time Prediction:** Instant failure probability calculations based on sensor inputs.
+* **Interactive Dashboard:** A modern UI built with Streamlit featuring a "Glass-morphic" design.
+* **Actionable Insights:** Categorizes risk into Low, Medium, and High, providing specific maintenance timelines (e.g., "Schedule within 2-4 hours").
+* **Alert History:** Keeps a session-based log of all validations for export and review.
+* **Technical Transparency:** Includes detailed evaluation reports and model comparison data.
 
 ---
 
-## 🛠️ Tech Stack
+## 📊 Performance Metrics
+The model was selected after rigorous comparison with Random Forest, SVM, and Gradient Boosting.
 
-* **Frontend:** [Streamlit](https://streamlit.io/) (Custom CSS & Layouts)
-* **Backend:** Python
-* **Machine Learning:** Scikit-Learn (Logistic Regression, KNN), Pandas, NumPy
-* **Design Tools:** Google Stitch (Beta), Google Antigravity (Cursor AI)
-* **Data Handling:** Pickle (Model Serialization), JSON (User Auth)
+| Metric | Score |
+| :--- | :--- |
+| **Accuracy** | 98% |
+| **Recall (Failures)** | 84% |
+| **Precision (Failures)** | 66% |
+| **ROC-AUC** | 0.976 |
+
+*Note: High recall is prioritized to ensure 8 out of 10 potential failures are caught, even at the cost of some false alarms.*
 
 ---
 
-## 🚀 Installation & Setup
+## 📂 File Structure
+* `app.py`: The main Streamlit dashboard application.
+* `predict.py`: Core prediction logic, data cleaning, and risk categorization.
+* `final_model.pkl`: The trained XGBoost model.
+* `final_scaler.pkl`: The StandardScaler for feature normalization.
+* `Machine_Failure_Prediction_System.ipynb`: Complete research, EDA, and training pipeline.
+* `model_evaluation_report.txt`: Performance breakdown and confusion matrix.
+* `requirements.txt`: Python dependencies required for the project.
 
-Follow these steps to run the project locally:
+---
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/YourUsername/NeuralPulse-Predictive-Maintenance.git](https://github.com/YourUsername/NeuralPulse-Predictive-Maintenance.git)
-cd NeuralPulse-Predictive-Maintenance
+## 🛠️ Installation & Setup
 
-📂 Project Structure
-NeuralPulse/
-├── app.py                  # Main Streamlit Application
-├── best_model.pkl          # Trained ML Model
-├── scaler.pkl              # Data Normalization Scaler
-├── requirements.txt        # Python Dependencies
-├── users.json              # User Database (JSON based)
-├── stitch/                 # UI Assets (Images, Icons, CSS)
-│   ├── images/             # Project Screenshots & Logos
-│   └── styles/             # Custom CSS
-└── README.md               # Project Documentation
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/predictive-maintenance-ai.git](https://github.com/YOUR_USERNAME/predictive-maintenance-ai.git)
+    cd predictive-maintenance-ai
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Run the Application:**
+    ```bash
+    streamlit run app.py
+    ```
+
+---
+
+## 🔧 How it Works
+The system follows a 4-step pipeline:
+1.  **Feature Engineering:** Converts raw inputs and machine types into model-ready features.
+2.  **Scaling:** Normalizes features like RPM and Torque using the pre-trained `final_scaler.pkl`.
+3.  **Inference:** The XGBoost model calculates the probability of failure.
+4.  **Heuristics:** A custom logic engine in `predict.py` translates probabilities into human-readable risk levels and maintenance advice.
+
+---
+
+## 💡 Recommendations for Use
+* **Alert Thresholds:** Set up automated alerts for any prediction with a probability > 0.8.
+* **Continuous Learning:** Periodically retrain the model with new sensor data from the `ai4i2020.csv` or actual industrial logs.
+* **Monitoring:** Track the "False Alarm" rate in the dashboard to fine-tune the decision thresholds.
+
+---
