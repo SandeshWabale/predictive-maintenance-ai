@@ -1,41 +1,29 @@
-# AI-Powered Predictive Maintenance System ⚙️
+# AI Predictive Maintenance Model
 
-An end-to-end Machine Learning solution designed to predict industrial machine failures before they occur. This project utilizes sensor data (temperature, torque, rotational speed) to provide real-time risk assessments and maintenance recommendations through an interactive dashboard.
+A real‑time machine failure prediction system with interactive dashboards, engineer validation logging, and historical analysis. Built with Streamlit and an XGBoost classifier.
 
-## 🚀 Project Overview
-This system is trained on the **AI4I 2020 Predictive Maintenance Dataset**. It uses an optimized **XGBoost** classifier to achieve high recall, ensuring that critical maintenance issues are identified early to reduce unplanned downtime.
+## 🚀 Live Demo
 
-### Key Features
-* **Real-time Prediction:** Instant failure probability calculations based on sensor inputs.
-* **Interactive Dashboard:** A modern UI built with Streamlit featuring a "Glass-morphic" design.
-* **Actionable Insights:** Categorizes risk into Low, Medium, and High, providing specific maintenance timelines (e.g., "Schedule within 2-4 hours").
-* **Alert History:** Keeps a session-based log of all validations for export and review.
-* **Technical Transparency:** Includes detailed evaluation reports and model comparison data.
+👉 **[Launch the app]([https://your-app-url.streamlit.app](https://predictive-maintenance-ai-z5rvc5aybzvpxagypn78g4.streamlit.app/))** – try it now without any installation.
 
----
+## ✨ Features
 
-## 📊 Performance Metrics
-The model was selected after rigorous comparison with Random Forest, SVM, and Gradient Boosting.
+- **System Dashboard** – Live KPIs, system health gauge, vibration & temperature trends.
+- **Prediction Engine** – Input sensor data (temperature, RPM, tool wear, pressure, vibration, machine type) to get failure probability and risk assessment.
+- **Engineer Validation** – Confirm or reject model predictions to build a ground‑truth log.
+- **Alert History** – View, search, and export all predictions with validation status and confidence scores.
 
-| Metric | Score |
-| :--- | :--- |
-| **Accuracy** | 98% |
-| **Recall (Failures)** | 84% |
-| **Precision (Failures)** | 66% |
-| **ROC-AUC** | 0.976 |
 
-*Note: High recall is prioritized to ensure 8 out of 10 potential failures are caught, even at the cost of some false alarms.*
+## 🛠️ Tech Stack
 
----
+| Component       | Technology                          |
+|-----------------|-------------------------------------|
+| Frontend        | Streamlit                           |
+| Machine Learning| XGBoost (scikit‑learn wrapper)      |
+| Data Handling   | Pandas, NumPy, Joblib                |
+| Visualization   | Plotly, Streamlit native charts      |
+| Logging         | In‑memory session state (CSV export)|
 
-## 📂 File Structure
-* `app.py`: The main Streamlit dashboard application.
-* `predict.py`: Core prediction logic, data cleaning, and risk categorization.
-* `final_model.pkl`: The trained XGBoost model.
-* `final_scaler.pkl`: The StandardScaler for feature normalization.
-* `Machine_Failure_Prediction_System.ipynb`: Complete research, EDA, and training pipeline.
-* `model_evaluation_report.txt`: Performance breakdown and confusion matrix.
-* `requirements.txt`: Python dependencies required for the project.
 
----
 
+## 📁 Project Structure
