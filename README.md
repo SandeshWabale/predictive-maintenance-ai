@@ -27,3 +27,19 @@ A real‑time machine failure prediction system with interactive dashboards, eng
 
 
 ## 📁 Project Structure
+predictive-maintenance-ai/
+│
+├── RESEARCH/
+│   ├── Machine_Failure_Prediction_System.ipynb
+│   ├── ai4i2020.csv
+│   ├── model_comparison.csv
+│   └── model_evaluation_report.txt
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+├── app.py
+├── feature_names.txt
+├── final_model.pkl
+├── final_scaler.pkl
+└── requirements.txt
