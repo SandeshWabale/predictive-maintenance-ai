@@ -26,7 +26,9 @@ A real‑time machine failure prediction system with interactive dashboards, eng
 
 
 
-## 📁 Project Structure
+## Project Structure
+
+```bash
 predictive-maintenance-ai/
 │
 ├── RESEARCH/
@@ -38,6 +40,12 @@ predictive-maintenance-ai/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
+├── app.py
+├── feature_names.txt
+├── final_model.pkl
+├── final_scaler.pkl
+└── requirements.txt
+```
 ├── app.py
 ├── feature_names.txt
 ├── final_model.pkl
